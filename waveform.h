@@ -1,6 +1,7 @@
 //
 // Created by 24029135 on 08/04/2026.
 // Requirement 1 - define a waveform sample struct
+// Requirement 5/6/7/8 - RMS, P2P, DC offset, detect clipping
 
 #ifndef WAVEFORM_H
 #define WAVEFORM_H
@@ -15,5 +16,12 @@ typedef struct {
     double power_factor;
     double thd_percent;
 } WaveformTemplate;
+
+
+// functions
+double calculateRMS (double *values, int n);
+double calculateMean (double *values, int n);
+double calculatePeak2Peak (double *values, int n);
+int clippingDetection (double *values, int n);
 
 #endif //WAVEFORM_H
