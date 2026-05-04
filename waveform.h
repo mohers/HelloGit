@@ -15,7 +15,7 @@ typedef struct {
     double frequency;
     double power_factor;
     double thd_percent;
-} WaveformTemplate;
+} waveformSample;
 
 
 // functions
