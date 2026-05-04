@@ -13,7 +13,7 @@ int countRows(char *fileName){
     FILE *file = fopen(fileName, "r");
         if (file == NULL) {
             printf("Error opening file. \n");
-            return NULL;
+            return -1;
         }
     int totalCount = 0;
     char line[256];
