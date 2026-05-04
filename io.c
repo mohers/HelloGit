@@ -40,6 +40,12 @@ waveformSample *loadData(char *fileName, int totalCount) {
         fclose(file);
         return NULL;
     }
+        //•	To fix bug where an empty file would cause a random output
+    if (totalCount == 0) {
+        printf("No data found. \n");
+        return NULL;
+    }
+
     char line[256];
         //skip header
     fgets(line,sizeof(line),file);
