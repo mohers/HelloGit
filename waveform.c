@@ -11,8 +11,11 @@
  double calculateRMS(double *values, int totalCount) {
      int i;
      double sum = 0;
-     for (i = 0; i < totalCount; i++)
-         sum += values[i] * values[i];
+     double *valuePTR = values;
+     for (i = 0; i < totalCount; i++) {
+         sum += (*valuePTR) * (*valuePTR);
+         valuePTR++;
+     }
      return sqrt(sum / totalCount);
  }
 
