@@ -34,6 +34,9 @@ int main(void) {
 
     if (phaseA == NULL || phaseB == NULL || phaseC == NULL) {
         printf("Error allocating memory. \n");
+        free(phaseA);
+        free(phaseB);
+        free(phaseC);
         free(data);
         return 1;
     }
@@ -69,10 +72,10 @@ int main(void) {
                                            rmsB, meanB, peak2PeakB, clippingDetectionB, toleranceComplianceB,
                                            rmsC, meanC, peak2PeakC, clippingDetectionC, toleranceComplianceC);
     if (finalMessage == 0) {
-        printf("Analysis Report Generated");
+        printf("Analysis Report Generated\n");
     }
     else {
-        printf("Please Restart Program");
+        printf("Please Restart Program\n");
     }
     free(phaseA);
     free(phaseB);

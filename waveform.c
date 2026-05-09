@@ -49,8 +49,8 @@ int clippingDetection(double *values, int totalCount) {
 // Tolerance Check
 int toleranceCompliance(double rms) {
      if (rms <= 253 && rms >= 207)
-         return 0;//within tolerance
+         return 1;//within tolerance
      else {
-         return 1;//out of tolerance
+         return 0;//out of tolerance
      }
  }
