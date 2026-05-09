@@ -12,7 +12,7 @@ int countRows(char *fileName);
 waveformSample *loadData(char *fileName, int totalCount);
 
 
-int writeFile(char *fileName, double rmsA, meanA, peak2PeakA, int clippingDetectionA, toleranceComplianceA,
-                              double rmsB, meanB, peak2PeakB, int clippingDetectionB, toleranceComplianceB,
-                              double rmsC, meanC, peak2PeakC, int clippingDetectionC, toleranceComplianceC);
+int writeFile(char *fileName, double rmsA, double meanA, double peak2PeakA, int clippingDetectionA, int toleranceComplianceA,
+                              double rmsB, double meanB, double peak2PeakB, int clippingDetectionB, int toleranceComplianceB,
+                              double rmsC, double meanC, double peak2PeakC, int clippingDetectionC, int toleranceComplianceC);
 #endif //IO_H

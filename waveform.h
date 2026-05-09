@@ -19,9 +19,9 @@ typedef struct {
 
 
 // functions
-double calculateRMS (double *values, int n);
-double calculateMean (double *values, int n);
-double calculatePeak2Peak (double *values, int n);
-int clippingDetection (double *values, int n);
+double calculateRMS (double *values, int totalCount);
+double calculateMean (double *values, int totalCount);
+double calculatePeak2Peak (double *values, int totalCount);
+int clippingDetection (double *values, int totalCount);
 int toleranceCompliance(double rms);
 #endif //WAVEFORM_H

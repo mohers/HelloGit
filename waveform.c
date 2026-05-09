@@ -8,27 +8,27 @@
 #include "waveform.h"
 
 // RMS calculation
- double calculateRMS(double *values, int n) {
+ double calculateRMS(double *values, int totalCount) {
      int i;
      double sum = 0;
-     for (i = 0; i < n; i++)
+     for (i = 0; i < totalCount; i++)
          sum += values[i] * values[i];
-     return sqrt(sum / n);
+     return sqrt(sum / totalCount);
  }
 
 // DC offset or mean calculation
-double calculateMean(double *values, int n) {
+double calculateMean(double *values, int totalCount) {
      int i;
      double sum = 0;
-     for (i = 0; i < n; i++)
+     for (i = 0; i < totalCount; i++)
          sum += values[i];
-     return sum / n;
+     return sum / totalCount;
  }
 
 // Peak to Peak Calculation
-double calculatePeak2Peak(double *values, int n) {
+double calculatePeak2Peak(double *values, int totalCount) {
     double min = 0, max = 0;
-     for (int i = 0; i < n; i++) {
+     for (int i = 0; i < totalCount; i++) {
          if (values[i] > max) max = values[i];
          if (values[i] < min) min = values[i];
      }
@@ -36,9 +36,9 @@ double calculatePeak2Peak(double *values, int n) {
  }
 
 // Clipping detection
-int clippingDetection(double *values, int n) {
+int clippingDetection(double *values, int totalCount) {
 
-     for (int i = 0; i < n; i++) {
+     for (int i = 0; i < totalCount; i++) {
          if (values[i] >= 324.9 || values[i] <= -324.9) {
              return 1;// Clipping Detected
          }
