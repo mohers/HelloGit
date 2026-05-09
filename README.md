@@ -13,3 +13,6 @@ Using CLion:
 Using GCC:
 
 if GCC is installed use the command "gcc -std=99 main.c waveform.c io.c -o desiredname -lm" whilst on powershell
+
+Github:
+https://github.com/mohers/HelloGit
