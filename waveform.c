@@ -39,14 +39,14 @@ double calculatePeak2Peak(double *values, int n) {
 int clippingDetection(double *values, int n) {
 
      for (int i = 0; i < n; i++) {
-         if (values[i] >= 324.9 || values[i] < -329.9) {
-             return 1;
+         if (values[i] >= 324.9 || values[i] <= -324.9) {
+             return 1;// Clipping Detected
          }
      }
 
-    return 0;
+    return 0;//No Clipping
 }
-
+// Tolerance Check
 int toleranceCompliance(double rms) {
      if (rms <= 253 && rms >= 207)
          return 0;//within tolerance

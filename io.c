@@ -84,4 +84,69 @@ waveformSample *loadData(char *fileName, int totalCount) {
     return data;
 }
 
+int writeFile(char *fileName, double rmsA, double meanA, double peak2PeakA, int clippingDetectionA, int toleranceComplianceA,
+                              double rmsB, double meanB, double peak2PeakB, int clippingDetectionB, int toleranceComplianceB,
+                              double rmsC, double meanC, double peak2PeakC, int clippingDetectionC, int toleranceComplianceC) {
+    FILE *file = fopen("results.txt", "w");
+    if (file == NULL) {
+        printf("Error creating file. \n");
+        return 1;
+    }
+    fprintf(file, "%s Analysis Report\n", fileName);
 
+    // Phase A
+    fprintf(file, "Phase A:\n\n");
+    fprintf(file, "RMS is: %.2f V\n", rmsA);
+    fprintf(file, "Mean is: %.2f V\n", meanA);
+    fprintf(file, "Peak to Peak is: %.2f V\n", peak2PeakA);
+    if (clippingDetectionA == 1) {
+        fprintf(file, "Clipping Detection: Clipping Detected\n");
+    }
+    else {
+        fprintf(file, "Clipping Detection: No Clipping\n");
+    }
+    if (toleranceComplianceA == 1) {
+        fprintf(file, "Tolerance Compliance: Passed\n\n\n");
+    }
+    else {
+        fprintf(file, "Tolerance Compliance: Failed\n\n\n");
+    }
+
+    // Phase B
+    fprintf(file, "Phase B:\n\n");
+    fprintf(file, "RMS is: %.2f V\n", rmsB);
+    fprintf(file, "Mean is: %.2f V\n", meanB);
+    fprintf(file, "Peak to Peak is: %.2f V\n", peak2PeakB);
+    if (clippingDetectionB == 1) {
+        fprintf(file, "Clipping Detection: Clipping Detected\n");
+    }
+    else {
+        fprintf(file, "Clipping Detection: No Clipping\n");
+    }
+    if (toleranceComplianceB == 1) {
+        fprintf(file, "Tolerance Compliance: Passed\n\n\n");
+    }
+    else {
+        fprintf(file, "Tolerance Compliance: Failed\n\n\n");
+    }
+
+    // Phase C
+    fprintf(file, "Phase C:\n\n");
+    fprintf(file, "RMS is: %.2f V\n", rmsC);
+    fprintf(file, "Mean is: %.2f V\n", meanC);
+    fprintf(file, "Peak to Peak is: %.2f V\n", peak2PeakC);
+    if (clippingDetectionC == 1) {
+        fprintf(file, "Clipping Detection: Clipping Detected\n");
+    }
+    else {
+        fprintf(file, "Clipping Detection: No Clipping\n");
+    }
+    if (toleranceComplianceC == 1) {
+        fprintf(file, "Tolerance Compliance: Passed\n\n\n");
+    }
+    else {
+        fprintf(file, "Tolerance Compliance: Failed\n\n\n");
+    }
+    fclose(file);
+    return 0;
+}

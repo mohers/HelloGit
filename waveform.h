@@ -23,5 +23,5 @@ double calculateRMS (double *values, int n);
 double calculateMean (double *values, int n);
 double calculatePeak2Peak (double *values, int n);
 int clippingDetection (double *values, int n);
-
+int toleranceCompliance(double rms);
 #endif //WAVEFORM_H
